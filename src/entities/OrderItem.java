@@ -10,7 +10,6 @@ public class OrderItem {
 	}
 
 	public OrderItem(Integer quantity, Product price) {
-		
 		this.quantity = quantity;
 		this.price = price;
 	}
@@ -33,12 +32,9 @@ public class OrderItem {
 	
 	
 	public Double subTotal(Double price, Integer quantity) {
-		
 		Double x = quantity * price;
-		
 		return x; 
 	}
-	
-	
+
 	
 }
