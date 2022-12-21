@@ -3,15 +3,17 @@ package entities;
 public class OrderItem {
 	
 	private Integer quantity;
-	private Product price;
+	//Composition
+	private Product product;
 	
 	public OrderItem() {
 		
 	}
 
-	public OrderItem(Integer quantity, Product price) {
+	public OrderItem(Integer quantity, Product product) {
 		this.quantity = quantity;
-		this.price = price;
+		this.product = product;
+	
 	}
 
 	public Integer getQuantity() {
@@ -22,17 +24,17 @@ public class OrderItem {
 		this.quantity = quantity;
 	}
 
-	public Product getPrice() {
-		return price;
+	
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setPrice(Product price) {
-		this.price = price;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
-	
-	
-	public Double subTotal(Double price, Integer quantity) {
-		Double x = quantity * price;
+
+	public Double subTotal(Product product, Integer quantity) {
+		Double x = quantity * product.getPrice();
 		return x; 
 	}
 
