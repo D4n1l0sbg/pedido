@@ -22,7 +22,7 @@ public class Program {
 		
 		System.out.println("Enter cliente data: ");
 		System.out.print("Nome: ");
-		String name = sc.next();
+		String name = sc.nextLine();
 		System.out.print("Email: ");
 		String email = sc.next();
 		System.out.print("Birth date (DD/MM/YYYY): ");
@@ -38,21 +38,23 @@ public class Program {
 		
 		System.out.print("How many items to this order? ");
 		int n = sc.nextInt();
-		for(int i=1; i<n; i++) {
+		for(int i=1; i<=n; i++) {
 			System.out.println("Enter # "+ i + " item data:");
-			System.out.println("Product name: ");
+			System.out.print("Product name: ");
 			String productName = sc.next();
 			System.out.print("Product price: ");
-			Double productPrice = sc.nextDouble();
+			double productPrice = sc.nextDouble();
+			System.out.print("Quantity: ");
 			Integer productQuantity = sc.nextInt();
 			
 			Product product = new Product(productName, productPrice);
 			
-			OrderItem orderItem = new OrderItem(productQuantity, product);
+			OrderItem orderItem = new OrderItem(productQuantity, productPrice, product);
 			
 			order.addItem(orderItem);			
 		}
 		
+		System.out.println(order);
 		
 		sc.close();
 	}
